@@ -1,4 +1,4 @@
-package com.arnaudpiroelle.marvelmuzei.ui.launcher.launcher;
+package com.arnaudpiroelle.marvelmuzei.ui.launcher;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;

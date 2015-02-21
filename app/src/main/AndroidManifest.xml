@@ -18,7 +18,7 @@
             android:theme="@style/Theme.Marvel">
 
         <activity
-                android:name=".ui.launcher.launcher.LauncherActivity"
+                android:name=".ui.launcher.LauncherActivity"
                 android:label="@string/title_activity_launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -28,7 +28,7 @@
         </activity>
 
         <activity
-                android:name=".ui.settings.settings.SettingsActivity"
+                android:name=".ui.settings.SettingsActivity"
                 android:exported="true"
                 android:label="@string/title_activity_settings"/>
 

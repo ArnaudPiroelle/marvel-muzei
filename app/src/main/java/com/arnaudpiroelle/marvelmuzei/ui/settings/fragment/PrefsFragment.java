@@ -1,4 +1,4 @@
-package com.arnaudpiroelle.marvelmuzei.ui.settings.settings.fragment;
+package com.arnaudpiroelle.marvelmuzei.ui.settings.fragment;
 
 import android.app.FragmentTransaction;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.arnaudpiroelle.marvelmuzei.ui.settings.settings;
+package com.arnaudpiroelle.marvelmuzei.ui.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.source.MarvelMuzeiArtSource;
-import com.arnaudpiroelle.marvelmuzei.ui.settings.settings.fragment.PrefsFragment;
+import com.arnaudpiroelle.marvelmuzei.ui.settings.fragment.PrefsFragment;
 
 import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.ACTION_RESCHEDULE;
 
