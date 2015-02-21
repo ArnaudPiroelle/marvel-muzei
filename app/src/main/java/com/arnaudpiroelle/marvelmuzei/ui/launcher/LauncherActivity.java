@@ -13,6 +13,7 @@ import butterknife.OnClick;
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.utils.AppCheckerUtils;
+import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
 import com.crashlytics.android.Crashlytics;
 
 import javax.inject.Inject;
@@ -53,6 +54,8 @@ public class LauncherActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
 
+        TrackerUtils.sendScreen("LauncherActivity");
+        
         if (appCheckerUtils.checkApplicationInstalled("net.nurik.roman.muzei")) {
             installButton.setVisibility(GONE);
             removeButton.setVisibility(VISIBLE);

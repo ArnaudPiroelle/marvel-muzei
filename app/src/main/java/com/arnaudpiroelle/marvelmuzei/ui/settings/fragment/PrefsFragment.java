@@ -11,6 +11,7 @@ import com.arnaudpiroelle.marvelmuzei.BuildConfig;
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.utils.PreferencesUtils;
+import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
 
 import javax.inject.Inject;
 import java.util.Calendar;
@@ -56,6 +57,8 @@ public class PrefsFragment extends PreferenceFragment implements OnPreferenceCli
     public void onResume() {
         getActivity().setTitle(R.string.title_activity_settings);
 
+        TrackerUtils.sendScreen("SettingsFragment");
+        
         enableTagsPrefBySource(preferencesUtils.getActiveSource());
         
         super.onResume();

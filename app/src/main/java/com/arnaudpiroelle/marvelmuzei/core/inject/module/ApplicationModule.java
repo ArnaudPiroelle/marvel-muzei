@@ -6,10 +6,10 @@ import com.arnaudpiroelle.marvelmuzei.core.source.SourceRegistry;
 import com.arnaudpiroelle.marvelmuzei.core.utils.AppCheckerUtils;
 import com.arnaudpiroelle.marvelmuzei.core.utils.MarvelCacheAPIUtils;
 import com.arnaudpiroelle.marvelmuzei.source.MarvelMuzeiArtSource;
-import com.arnaudpiroelle.marvelmuzei.ui.launcher.launcher.LauncherActivity;
-import com.arnaudpiroelle.marvelmuzei.ui.settings.settings.SettingsActivity;
-import com.arnaudpiroelle.marvelmuzei.ui.settings.settings.fragment.MyTagsFragment;
-import com.arnaudpiroelle.marvelmuzei.ui.settings.settings.fragment.PrefsFragment;
+import com.arnaudpiroelle.marvelmuzei.ui.launcher.LauncherActivity;
+import com.arnaudpiroelle.marvelmuzei.ui.settings.SettingsActivity;
+import com.arnaudpiroelle.marvelmuzei.ui.settings.fragment.MyTagsFragment;
+import com.arnaudpiroelle.marvelmuzei.ui.settings.fragment.PrefsFragment;
 import dagger.Module;
 import dagger.Provides;
 

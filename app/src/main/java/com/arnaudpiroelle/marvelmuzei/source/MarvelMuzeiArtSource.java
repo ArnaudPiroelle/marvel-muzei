@@ -12,8 +12,8 @@ import com.arnaudpiroelle.marvelmuzei.core.api.service.MarvelCacheApiService;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.source.CustomSource;
 import com.arnaudpiroelle.marvelmuzei.core.source.SourceRegistry;
-import com.arnaudpiroelle.marvelmuzei.core.utils.Constants;
 import com.arnaudpiroelle.marvelmuzei.core.utils.PreferencesUtils;
+import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
 import com.arnaudpiroelle.marvelmuzei.source.command.PublishCommand;
 import com.arnaudpiroelle.marvelmuzei.source.command.SaveCommand;
 import com.google.android.apps.muzei.api.Artwork;
@@ -23,9 +23,7 @@ import com.google.android.apps.muzei.api.UserCommand;
 import javax.inject.Inject;
 
 import static android.net.ConnectivityManager.TYPE_WIFI;
-import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.ACTION_RESCHEDULE;
-import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.APP_TAG;
-import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.SOURCE_NAME;
+import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.*;
 
 public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
 
@@ -126,6 +124,8 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
                     Data data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
 
                     if (data != null) {
+                        TrackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
+                        
                         Artwork.Builder artworkBuilder = new Artwork.Builder();
                         artworkBuilder.title(data.getName());
                         artworkBuilder.token(String.valueOf(data.getId()));

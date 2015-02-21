@@ -14,6 +14,7 @@ import butterknife.*;
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.utils.PreferencesUtils;
+import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -53,7 +54,7 @@ public class MyTagsFragment extends Fragment {
 
     @Override
     public void onResume() {
-        super.onResume();
+        TrackerUtils.sendScreen("MyTagsFragment");
 
         mTagAdapter = new TagAdapter();
 
@@ -63,6 +64,8 @@ public class MyTagsFragment extends Fragment {
         mTag.setImeActionLabel(getString(R.string.add), EditorInfo.IME_ACTION_DONE);
         
         getActivity().setTitle(R.string.pref_tags);
+
+        super.onResume();
     }
 
     @Override
