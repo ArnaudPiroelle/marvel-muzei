@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Marvel Muzei</string>
+    <string name="title_activity_settings">Préférences Marvel Muzei</string>
+    <string name="title_activity_launcher">Marvel Muzei</string>
+
+    <string name="app_description">Retrouvez vos personnages Marvel préférés et découvrez en beaucoup d\'autres.</string>
+
+    <string name="command_save">Sauvegarder</string>
+    <string name="command_publish">Partager</string>
+
+    <string name="notification_new_wallpaper">Nouveau fond d\'écran sauvegardé</string>
+    <string name="share_template">Mon fond d\'écran du jour est \'%1$s\' de %2$s. \n\n#MarvelMuzei \n\n%3$s \n\n%4$s
+    </string>
+
+    <string name="marvel_copyright">Marvel</string>
+
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.arnaudpiroelle.marvelmuzei</string>
+
+    <string name="share_with">Partager avec</string>
+
+    <string name="prefs_header_general">Général</string>
+    <string name="prefs_header_updates">Mise à jour</string>
+    <string name="prefs_header_about">A propos</string>
+    <string name="prefs_header_tags">Mots-clés</string>
+
+    <string name="pref_source_title">Source</string>
+
+    <string name="pref_intervalpicker_title">Intervalle de mise à jour</string>
+
+    <string name="pref_wifiswitch_title">Wi-Fi seulement</string>
+    <string name="pref_wifiswitch_summary">La mise à jour en Wi-Fi seulement aide à réduire la consomation de données mobiles.</string>
+
+    <string name="pref_about_summary">
+        Version %1$s
+        \n© %2$d Arnaud Piroelle
+    </string>
+
+    <string name="extension_description">MarvelMuzei est une extension pour l\'application de fond d\'écran dynamique Muzei.
+        \n\nFonctionnalités:
+        \n- Des fonds d\'écran de personnages ou comics Marvel chaque jours
+        \n- Mode de téléchargement WiFi uniquement
+        \n- Intervalle de mise à jour personnalisable
+        \n- Changement de fond d\'écran manuel
+        \n- Sauvegarde du fond d\'écran sur vos appareils
+        \n- Partage du fond d\'écran avec vos amis
+        \n\nComment utiliser l\'application:
+        \n- Installer Muzei (http://play.google.com/store/apps/details?id=net.nurik.roman.muzei)
+        \n- Ouvrir l\'application Muzei
+        \n- Sélectionner \'Marvel Muzei\' comme source
+        \n- Customiser la configuration de \'Marvel Muzei\'
+        \n- C\'est terminé
+        \n\nImages fournies par Marvel. © 2014 MARVEL</string>
+
+    <string name="muzei_market">Installer l\'application Muzei</string>
+    <string name="no_hashtag">Pas de mot-clé</string>
+    <string name="add">Ajouter</string>
+    <string name="tag_hint">Mot-clé</string>
+    <string name="bad_tag_format">Mauvais format de mot-clé</string>
+    <string name="pref_tags">Gérer vos mots-clés</string>
+
+    <string name="already_installed">Les pré requis ont déjà été installés, cet icone va être supprimé</string>
+    <string name="remove_activity">Supprimer de la liste des applications</string>
+
+</resources>

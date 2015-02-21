@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_intervalpicker_entries">
+        <item>Jamais</item>
+        <item>Toutes les 15 minutes</item>
+        <item>Toutes les 30 minutes</item>
+        <item>Toutes les heures</item>
+        <item>Toutes les 3 heures</item>
+        <item>Toutes les 6 heures</item>
+        <item>Tous les jours</item>
+        <item>Tous les 3 jours</item>
+    </string-array>
+    <string-array name="list_source_entries">
+        <item>Aléatoire</item>
+        <item>Vos mots-clés</item>
+    </string-array>
+    <string-array name="list_type_entries">
+        <item>Personnages</item>
+        <item>Comics</item>
+        <item>Personnages &amp; Comics</item>
+    </string-array>
+</resources>
