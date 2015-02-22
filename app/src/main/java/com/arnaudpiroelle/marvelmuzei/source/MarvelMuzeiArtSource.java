@@ -88,12 +88,12 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-        if (intent != null && ACTION_RESCHEDULE.equals(intent.getAction())) {
+        if (ACTION_RESCHEDULE.equals(intent.getAction())) {
             initPrefs();
             try {
                 update(activeSource);
             } catch (RetryException e) {
-                Log.e(APP_TAG, "Erreur", e);
+                Log.e(APP_TAG, "Erreur on service update", e);
             }
         } else {
             super.onHandleIntent(intent);
@@ -113,42 +113,34 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
     }
 
     public void update(String sourceId) throws RetryException {
-        try {
-            Log.i(APP_TAG, "Update");
+        Log.i(APP_TAG, "Update");
 
-            if (isConnectedWifi() && wifiOnly || !wifiOnly) {
-                CustomSource customSource = sourceRegistry.getSource(sourceId);
+        if (!wifiOnly || isConnectedWifi()) {
+            CustomSource customSource = sourceRegistry.getSource(sourceId);
 
-                if (customSource != null) {
-                    //TODO: Use correct parameters !
-                    Data data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
+            if (customSource != null) {
+                Data data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
 
-                    if (data != null) {
-                        TrackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
-                        
-                        Artwork.Builder artworkBuilder = new Artwork.Builder();
-                        artworkBuilder.title(data.getName());
-                        artworkBuilder.token(String.valueOf(data.getId()));
-                        artworkBuilder.imageUri(Uri.parse(data.getImage()));
+                if (data != null) {
+                    TrackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
 
-                        if (data.getDescription() != null && !data.getDescription().isEmpty()) {
-                            artworkBuilder.byline(Html.fromHtml(data.getDescription()).toString());
-                        }
+                    Artwork.Builder artworkBuilder = new Artwork.Builder()
+                            .title(data.getName())
+                            .token(String.valueOf(data.getId()))
+                            .imageUri(Uri.parse(data.getImage()));
 
-                        if (data.getUrl() != null) {
-                            artworkBuilder.viewIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(data.getUrl())));
-                        }
-
-                        publishArtwork(artworkBuilder.build());
+                    if (data.getDescription() != null && !data.getDescription().isEmpty()) {
+                        artworkBuilder.byline(Html.fromHtml(data.getDescription()).toString());
                     }
-                }
-            } else {
-                Log.i(APP_TAG, "Wifi désactivé -> Pas de synchro");
-            }
-        } catch (Exception e) {
-            throw new RetryException();
-        }
 
+                    if (data.getUrl() != null) {
+                        artworkBuilder.viewIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(data.getUrl())));
+                    }
+
+                    publishArtwork(artworkBuilder.build());
+                }
+            }
+        }
     }
 
     private boolean isConnectedWifi() {
