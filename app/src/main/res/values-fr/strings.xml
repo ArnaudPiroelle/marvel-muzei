@@ -62,5 +62,6 @@
 
     <string name="already_installed">Les pré requis ont déjà été installés, cet icone va être supprimé</string>
     <string name="remove_activity">Supprimer de la liste des applications</string>
+    <string name="chooser_market">Selectionner votre store:</string>
 
 </resources>

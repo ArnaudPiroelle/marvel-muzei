@@ -68,5 +68,6 @@
     <string name="pref_type_key">pref_type</string>
     <string name="pref_type_title">Types</string>
     <string name="pref_type_defaultvalue">CHARACTER</string>
+    <string name="chooser_market">Choose your market:</string>
 
 </resources>
