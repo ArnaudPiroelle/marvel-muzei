@@ -74,8 +74,6 @@ public class LauncherActivity extends ActionBarActivity {
 
     @OnClick(R.id.remove_button)
     void onRemoveClick() {
-        Crashlytics.log(INFO, APP_TAG, "Remove Launcher Activity");
-
         packageManager.setComponentEnabledSetting(getComponentName(),
                 COMPONENT_ENABLED_STATE_DISABLED,
                 DONT_KILL_APP);
