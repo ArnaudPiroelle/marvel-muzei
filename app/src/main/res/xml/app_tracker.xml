@@ -8,13 +8,13 @@
     <bool name="ga_autoActivityTracking">true</bool>
     
     <!-- The screen names that will appear in reports -->
-    <screenName name="com.arnaudpiroelle.marvelmuzei.ui.launcher.LauncherActivity">
+    <screenName name="com.arnaudpiroelle.muzei.marvel.ui.launcher.LauncherActivity">
         MarvelMuzei Launcher
     </screenName>
-    <screenName name="com.arnaudpiroelle.marvelmuzei.ui.settings.fragment.PrefsFragment">
+    <screenName name="com.arnaudpiroelle.muzei.marvel.ui.settings.fragment.PrefsFragment">
         MarvelMuzei Settings
     </screenName>
-    <screenName name="com.arnaudpiroelle.marvelmuzei.ui.settings.fragment.MyTagsFragment">
+    <screenName name="com.arnaudpiroelle.muzei.marvel.ui.settings.fragment.MyTagsFragment">
         MarvelMuzei Tags
     </screenName>
     
