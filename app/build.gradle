@@ -1,54 +1,38 @@
 apply plugin: 'com.android.application'
 apply plugin: 'io.fabric'
-apply plugin: 'spoon'
 
-buildscript {
-    repositories {
-        jcenter()
-        maven {
-            url 'https://maven.fabric.io/public'
-        }
-    }
-    
-    dependencies {
-
-        classpath 'com.stanfy.spoon:spoon-gradle-plugin:0.14.1'
-    }
+def getBuildNumber() {
+    return System.getenv("CIRCLE_BUILD_NUM") as Integer ?: 0
 }
 
-spoon {
-    debug = true
+def getKeystorePassword() {
+    return System.getenv("APP_KEYSTORE_PASSWORD") as String ?: "PASSWORD"
 }
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 22
     buildToolsVersion '22.0.1'
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 21
-        
-        applicationId "com.arnaudpiroelle.marvelmuzei"
-        versionCode 15
-        versionName '1.2.0'
+        targetSdkVersion 22
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId "com.arnaudpiroelle.muzei.marvel"
+        versionCode getBuildNumber()
+        versionName '1.2.0'
     }
-    
+
     signingConfigs {
         release {
-            def props = new Properties()
-            props.load(new FileInputStream(rootProject.file('keystore.properties')))
-
-            storeFile = file(props['store'])
-            storePassword = props['storePass']
-            keyAlias = props['alias']
-            keyPassword = props['pass']
+            storeFile file('marvel-muzei.keystore')
+            storePassword "${getKeystorePassword()}"
+            keyAlias 'marvel-muzei'
+            keyPassword "${getKeystorePassword()}"
         }
     }
-    
+
     buildTypes {
-       release {
+        release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), file('proguard-project.txt')
             signingConfig signingConfigs.release
@@ -79,7 +63,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    
+
     /* Support libs */
     compile 'com.android.support:appcompat-v7:22.2.0'
 
@@ -90,15 +74,15 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp-urlconnection:2.2.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
-    
+
     /* Dependencies injection */
     compile 'com.squareup.dagger:dagger:1.2.2'
     provided 'com.squareup.dagger:dagger-compiler:1.2.2'
-    
+
     compile 'com.jakewharton:butterknife:6.1.0'
-    
+
     /* Monitoring */
-    compile('com.crashlytics.sdk.android:crashlytics:2.2.0@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.4.0@aar') {
         transitive = true;
     }
 
@@ -108,12 +92,5 @@ dependencies {
 
     compile 'io.reactivex:rxandroid:0.24.0'
 
-    /* Tests Libs */
-    debugCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
-    debugCompile 'com.google.dexmaker:dexmaker:1.0'
-    debugCompile 'org.mockito:mockito-core:1.10.17'
-    
-    androidTestCompile 'com.squareup.spoon:spoon-client:1.1.2'
-    androidTestCompile 'com.android.support.test:testing-support-lib:0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.0'
+    testCompile 'junit:junit:4.12'
 }
