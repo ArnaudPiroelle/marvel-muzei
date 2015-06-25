@@ -6,7 +6,7 @@
 
     <TextView
             android:id="@+id/extension_description"
-            android:layout_margin="5dp"
+            android:layout_margin="10dp"
             android:text="@string/extension_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

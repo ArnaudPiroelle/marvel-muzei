@@ -5,6 +5,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -26,7 +27,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static android.widget.Toast.LENGTH_SHORT;
 
-public class LauncherActivity extends ActionBarActivity {
+public class LauncherActivity extends AppCompatActivity {
 
     @InjectView(R.id.install_button)
     Button installButton;

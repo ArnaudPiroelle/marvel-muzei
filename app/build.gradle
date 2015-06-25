@@ -106,6 +106,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-base:7.5.0'
     compile 'com.google.android.gms:play-services-analytics:7.5.0'
 
+    compile 'io.reactivex:rxandroid:0.24.0'
+
     /* Tests Libs */
     debugCompile 'com.google.dexmaker:dexmaker-mockito:1.0'
     debugCompile 'com.google.dexmaker:dexmaker:1.0'

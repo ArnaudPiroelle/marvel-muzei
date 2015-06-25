@@ -49,7 +49,7 @@
         \n- Select "Marvel Muzei" as your source
         \n- Customize "Marvel Muzei" configuration
         \n- Done
-        \n\nData provided by Marvel. © 2014 MARVEL
+        \n\nData provided by Marvel. © 2015 MARVEL
     </string>
     <string name="muzei_market">Install Muzei App</string>
     <string name="remove_activity">Remove from application list</string>
@@ -69,5 +69,6 @@
     <string name="pref_type_title">Types</string>
     <string name="pref_type_defaultvalue">CHARACTER</string>
     <string name="chooser_market">Choose your market:</string>
+    <string name="marvel_provider">Data provided by Marvel. © 2015 MARVEL</string>
 
 </resources>

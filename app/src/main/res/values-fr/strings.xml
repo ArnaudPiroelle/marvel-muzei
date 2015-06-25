@@ -51,7 +51,7 @@
         \n- Sélectionner \'Marvel Muzei\' comme source
         \n- Customiser la configuration de \'Marvel Muzei\'
         \n- C\'est terminé
-        \n\nImages fournies par Marvel. © 2014 MARVEL</string>
+        \n\nImages fournies par Marvel. © 2015 MARVEL</string>
 
     <string name="muzei_market">Installer l\'application Muzei</string>
     <string name="no_hashtag">Pas de mot-clé</string>
@@ -64,4 +64,5 @@
     <string name="remove_activity">Supprimer de la liste des applications</string>
     <string name="chooser_market">Selectionner votre store:</string>
 
+    <string name="marvel_provider">Images fournies par Marvel. © 2015 MARVEL</string>
 </resources>
