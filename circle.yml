@@ -5,3 +5,10 @@ machine:
 dependencies:
   pre:
     - echo y | android update sdk --no-ui --all
+
+deployment:
+  production:
+    branch: release
+    commands:
+      - ./gradlew assembleRelease
+      - cp -r app/build/outputs/apk/ $CIRCLE_ARTIFACTS
