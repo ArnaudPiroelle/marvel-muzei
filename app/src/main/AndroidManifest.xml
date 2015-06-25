@@ -13,7 +13,7 @@
     <application
         android:name="com.arnaudpiroelle.marvelmuzei.MarvelMuzeiApplication"
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/Theme.Marvel">
 
@@ -35,7 +35,7 @@
         <service
             android:name=".source.MarvelMuzeiArtSource"
             android:description="@string/app_description"
-            android:icon="@drawable/ic_launcher"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.google.android.apps.muzei.api.MuzeiArtSource" />
@@ -46,7 +46,7 @@
                 android:value="com.arnaudpiroelle.marvelmuzei.ui.settings.SettingsActivity" />
             <meta-data
                 android:name="color"
-                android:value="@color/marvel_red" />
+                android:value="@color/primaryColor" />
         </service>
 
         <service android:name="com.google.android.gms.analytics.CampaignTrackingService" />

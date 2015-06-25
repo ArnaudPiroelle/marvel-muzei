@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="marvel_darkred">#ff9C0D13</color>
-    <color name="marvel_red">#ffC01018</color>
+    <color name="primaryColor">#275591</color>
+    <color name="primaryColorDark">#20467b</color>
 </resources>

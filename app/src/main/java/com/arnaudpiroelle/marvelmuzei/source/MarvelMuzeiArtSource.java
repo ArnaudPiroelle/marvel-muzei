@@ -179,7 +179,7 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource implements Downlo
                 PendingIntent.getActivity(context, 0, imageIntent, 0);
 
         NotificationCompat.Builder nb = new NotificationCompat.Builder(context)
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_launcher)
                 .setPriority(NotificationCompat.PRIORITY_MIN)
                 .setAutoCancel(true)
                 .setContentTitle(file.getName())
