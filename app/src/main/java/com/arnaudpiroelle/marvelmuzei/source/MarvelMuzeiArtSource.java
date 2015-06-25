@@ -7,8 +7,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.text.Html;
 import android.util.Log;
+
 import com.arnaudpiroelle.marvelmuzei.core.api.response.Data;
-import com.arnaudpiroelle.marvelmuzei.core.api.service.MarvelCacheApiService;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.source.CustomSource;
 import com.arnaudpiroelle.marvelmuzei.core.source.SourceRegistry;
@@ -23,7 +23,9 @@ import com.google.android.apps.muzei.api.UserCommand;
 import javax.inject.Inject;
 
 import static android.net.ConnectivityManager.TYPE_WIFI;
-import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.*;
+import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.ACTION_RESCHEDULE;
+import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.APP_TAG;
+import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.SOURCE_NAME;
 
 public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
 
@@ -40,7 +42,7 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
     protected SourceRegistry sourceRegistry;
 
     @Inject
-    protected MarvelCacheApiService marvelCacheApiService;
+    TrackerUtils trackerUtils;
 
     private boolean wifiOnly;
     private String activeSource;
@@ -122,7 +124,7 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource {
                 Data data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
 
                 if (data != null) {
-                    TrackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
+                    trackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
 
                     Artwork.Builder artworkBuilder = new Artwork.Builder()
                             .title(data.getName())

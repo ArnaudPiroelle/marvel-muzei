@@ -24,6 +24,9 @@ public class MyTagsFragment extends Fragment {
     @Inject
     protected PreferencesUtils preferencesUtils;
 
+    @Inject
+    TrackerUtils trackerUtils;
+
     @InjectView(R.id.list)
     ListView mList;
 
@@ -54,7 +57,7 @@ public class MyTagsFragment extends Fragment {
 
     @Override
     public void onResume() {
-        TrackerUtils.sendScreen("MyTagsFragment");
+        trackerUtils.sendScreen("MyTagsFragment");
 
         mTagAdapter = new TagAdapter();
 

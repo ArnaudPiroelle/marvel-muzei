@@ -5,9 +5,20 @@ import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
+import javax.inject.Inject;
+
 public class TrackerUtils {
-    public static void sendEvent(String category, String action, String label) {
-        Tracker tracker = ((MarvelMuzeiApplication) Injector.getContext()).getTracker();
+
+    private Tracker tracker;
+
+    @Inject
+    public TrackerUtils(Tracker tracker) {
+        this.tracker = tracker;
+    }
+
+
+
+    public void sendEvent(String category, String action, String label) {
         tracker.send(new HitBuilders.EventBuilder()
                 .setCategory(category)
                 .setAction(action)
@@ -16,8 +27,7 @@ public class TrackerUtils {
 
     }
 
-    public static void sendScreen(String screenName) {
-        Tracker tracker = ((MarvelMuzeiApplication) Injector.getContext()).getTracker();
+    public void sendScreen(String screenName) {
         tracker.setScreenName(screenName);
         tracker.send(new HitBuilders.AppViewBuilder()
                 .build());

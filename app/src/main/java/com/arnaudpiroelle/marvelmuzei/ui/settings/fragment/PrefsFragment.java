@@ -7,6 +7,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
 import android.view.View;
+
 import com.arnaudpiroelle.marvelmuzei.BuildConfig;
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
@@ -14,6 +15,7 @@ import com.arnaudpiroelle.marvelmuzei.core.utils.PreferencesUtils;
 import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
 
 import javax.inject.Inject;
+
 import java.util.Calendar;
 
 import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.TAG_SOURCE;
@@ -22,6 +24,9 @@ public class PrefsFragment extends PreferenceFragment implements OnPreferenceCli
 
     @Inject
     PreferencesUtils preferencesUtils;
+
+    @Inject
+    TrackerUtils trackerUtils;
 
     Preference sourcePreference;
     Preference aboutPreference;
@@ -33,7 +38,7 @@ public class PrefsFragment extends PreferenceFragment implements OnPreferenceCli
         addPreferencesFromResource(R.xml.preferences);
 
         Injector.inject(this);
-        
+
         aboutPreference = findPreference(getString(R.string.pref_about_key));
         tagsPreference = findPreference(getString(R.string.pref_tags_key));
         sourcePreference = findPreference(getString(R.string.pref_source_key));
@@ -57,10 +62,10 @@ public class PrefsFragment extends PreferenceFragment implements OnPreferenceCli
     public void onResume() {
         getActivity().setTitle(R.string.title_activity_settings);
 
-        TrackerUtils.sendScreen("SettingsFragment");
-        
+        trackerUtils.sendScreen("SettingsFragment");
+
         enableTagsPrefBySource(preferencesUtils.getActiveSource());
-        
+
         super.onResume();
     }
 
@@ -86,7 +91,7 @@ public class PrefsFragment extends PreferenceFragment implements OnPreferenceCli
             enableTagsPrefBySource((String) newPreferenceValue);
             return true;
         }
-        
+
         return false;
     }
 

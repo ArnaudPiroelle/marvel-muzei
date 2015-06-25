@@ -7,25 +7,24 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.Button;
 import android.widget.Toast;
-import butterknife.ButterKnife;
-import butterknife.InjectView;
-import butterknife.OnClick;
+
 import com.arnaudpiroelle.marvelmuzei.R;
 import com.arnaudpiroelle.marvelmuzei.core.inject.Injector;
 import com.arnaudpiroelle.marvelmuzei.core.utils.AppCheckerUtils;
 import com.arnaudpiroelle.marvelmuzei.core.utils.TrackerUtils;
-import com.crashlytics.android.Crashlytics;
 
 import javax.inject.Inject;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 import static android.content.Intent.ACTION_VIEW;
 import static android.content.pm.PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
 import static android.content.pm.PackageManager.DONT_KILL_APP;
-import static android.util.Log.INFO;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 import static android.widget.Toast.LENGTH_SHORT;
-import static com.arnaudpiroelle.marvelmuzei.core.utils.Constants.APP_TAG;
 
 public class LauncherActivity extends ActionBarActivity {
 
@@ -41,6 +40,9 @@ public class LauncherActivity extends ActionBarActivity {
     @Inject
     AppCheckerUtils appCheckerUtils;
 
+    @Inject
+    TrackerUtils trackerUtils;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +56,8 @@ public class LauncherActivity extends ActionBarActivity {
     protected void onResume() {
         super.onResume();
 
-        TrackerUtils.sendScreen("LauncherActivity");
-        
+        trackerUtils.sendScreen("LauncherActivity");
+
         if (appCheckerUtils.checkApplicationInstalled("net.nurik.roman.muzei")) {
             installButton.setVisibility(GONE);
             removeButton.setVisibility(VISIBLE);
