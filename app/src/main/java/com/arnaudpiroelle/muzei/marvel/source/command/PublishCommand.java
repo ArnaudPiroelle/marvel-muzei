@@ -25,13 +25,12 @@ public class PublishCommand extends UserCommand implements Command {
 
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("text/plain");
+        shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         String appUrl = context.getString(R.string.app_url);
         String notifText = String.format(context.getString(R.string.share_template), artwork.getTitle().trim(), artist, detailUrl, appUrl);
 
         shareIntent.putExtra(Intent.EXTRA_TEXT, notifText);
-        shareIntent = Intent.createChooser(shareIntent, context.getString(R.string.share_with));
-        shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(Intent.createChooser(shareIntent, getContext().getString(R.string.chooser_market)));
+        context.startActivity(shareIntent);
     }
 }
