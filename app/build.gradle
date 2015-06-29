@@ -19,7 +19,7 @@ android {
 
         applicationId "com.arnaudpiroelle.muzei.marvel"
         versionCode getBuildNumber()
-        versionName '1.2.0'
+        versionName '1.2.1'
     }
 
     signingConfigs {
