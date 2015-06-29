@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import rx.Observable;
+
 
 public abstract class CustomSource {
 
@@ -20,5 +22,5 @@ public abstract class CustomSource {
         return this.getClass().getSimpleName();
     }
 
-    public abstract Data getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException;
+    public abstract Observable<Data> getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException;
 }

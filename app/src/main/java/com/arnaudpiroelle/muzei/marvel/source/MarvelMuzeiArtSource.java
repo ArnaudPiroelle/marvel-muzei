@@ -30,6 +30,9 @@ import java.io.File;
 
 import javax.inject.Inject;
 
+import rx.Observable;
+import rx.functions.Action1;
+
 import static android.content.Intent.ACTION_MEDIA_SCANNER_SCAN_FILE;
 import static android.net.ConnectivityManager.TYPE_WIFI;
 import static android.net.Uri.fromFile;
@@ -135,24 +138,35 @@ public class MarvelMuzeiArtSource extends RemoteMuzeiArtSource implements Downlo
             CustomSource customSource = sourceRegistry.getSource(sourceId);
 
             if (customSource != null) {
-                Data data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
 
-                if (data != null) {
-                    trackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
 
-                    Artwork.Builder artworkBuilder = new Artwork.Builder()
-                            .title(data.getName())
-                            .token(String.valueOf(data.getId()))
-                            .imageUri(Uri.parse(data.getImage()));
+                Observable<Data> data = customSource.getData(preferencesUtils.getDataTypes(), preferencesUtils.getQualities());
 
-                    artworkBuilder.byline(getString(R.string.marvel_provider));
+                data.subscribe(new Action1<Data>() {
+                                   @Override
+                                   public void call(Data data) {
+                                       trackerUtils.sendEvent("MarvelMuzeiSource", "update", data.getName());
 
-                    if (data.getUrl() != null) {
-                        artworkBuilder.viewIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(data.getUrl())));
-                    }
+                                       Artwork.Builder artworkBuilder = new Artwork.Builder()
+                                               .title(data.getName())
+                                               .token(String.valueOf(data.getId()))
+                                               .imageUri(Uri.parse(data.getImage()));
 
-                    publishArtwork(artworkBuilder.build());
-                }
+                                       artworkBuilder.byline(getString(R.string.marvel_provider));
+
+                                       if (data.getUrl() != null) {
+                                           artworkBuilder.viewIntent(new Intent(Intent.ACTION_VIEW, Uri.parse(data.getUrl())));
+                                       }
+
+                                       publishArtwork(artworkBuilder.build());
+                                   }
+                               },
+                        new Action1<Throwable>() {
+                            @Override
+                            public void call(Throwable throwable) {
+
+                            }
+                        });
             }
         }
     }

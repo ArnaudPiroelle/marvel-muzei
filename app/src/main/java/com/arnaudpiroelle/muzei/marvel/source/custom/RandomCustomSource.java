@@ -10,6 +10,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import rx.Observable;
+
 public class RandomCustomSource extends CustomSource {
 
     @Inject
@@ -18,7 +20,7 @@ public class RandomCustomSource extends CustomSource {
     }
     
     @Override
-    public Data getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException {
+    public Observable<Data> getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException {
         return marvelCacheApiService.randomData(types, qualities);
     }
 }

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Marvel Muzei</string>
+    <string name="app_name">Muzei Superheroes</string>
 
-    <string name="title_activity_settings">Marvel Muzei Settings</string>
+    <string name="title_activity_settings">Muzei Superheroes Settings</string>
 
     <string name="app_description">Retrieve your favorite Marvel characters and discover many others.</string>
     <string name="command_save">Save</string>
     <string name="command_publish">Share</string>
     <string name="notification_new_wallpaper">New wallpaper saved</string>
-    <string name="share_template">My Android wallpaper today is \'%1$s\' by %2$s. \n\n#MarvelMuzei \n\n%3$s \n\n%4$s
+    <string name="share_template">My Android wallpaper today is \'%1$s\' by %2$s. \n\n#Muzei Superheroes \n\n%3$s
     </string>
     <string name="marvel_copyright">Marvel</string>
-    <string name="app_url">https://play.google.com/store/apps/details?id=com.arnaudpiroelle.marvelmuzei</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.arnaudpiroelle.muzei.marvel</string>
     <string name="share_with">Share with</string>
 
     <!-- Preferences -->
@@ -34,8 +34,8 @@
         \n© %2$d Arnaud Piroelle
     </string>
     <string name="pref_source_defaultvalue">RandomCustomSource</string>
-    <string name="title_activity_launcher">Marvel Muzei</string>
-    <string name="extension_description">MarvelMuzei is an extension for the Muzei live-wallpaper app.
+    <string name="title_activity_launcher">Muzei Superheroes</string>
+    <string name="extension_description">Muzei Superheroes is an extension for the Muzei live-wallpaper app.
         \n\nKey features:
         \n- Marvel characters or comics wallpapers every day
         \n- WiFi-only download mode
@@ -46,8 +46,8 @@
         \n\nHow to use:
         \n- Install Muzei : http://play.google.com/store/apps/details?id=net.nurik.roman.muzei
         \n- Open Muzei app
-        \n- Select "Marvel Muzei" as your source
-        \n- Customize "Marvel Muzei" configuration
+        \n- Select "Muzei Superheroes" as your source
+        \n- Customize "Muzei Superheroes" configuration
         \n- Done
         \n\nData provided by Marvel. © 2015 MARVEL
     </string>

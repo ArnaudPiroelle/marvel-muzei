@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Marvel Muzei</string>
-    <string name="title_activity_settings">Préférences Marvel Muzei</string>
-    <string name="title_activity_launcher">Marvel Muzei</string>
+    <string name="app_name">Muzei Superheroes</string>
+    <string name="title_activity_settings">Préférences Muzei Superheroes</string>
+    <string name="title_activity_launcher">Muzei Superheroes</string>
 
     <string name="app_description">Retrouvez vos personnages Marvel préférés et découvrez en beaucoup d\'autres.</string>
 
@@ -11,12 +11,12 @@
     <string name="command_publish">Partager</string>
 
     <string name="notification_new_wallpaper">Nouveau fond d\'écran sauvegardé</string>
-    <string name="share_template">Mon fond d\'écran du jour est \'%1$s\' de %2$s. \n\n#MarvelMuzei \n\n%3$s \n\n%4$s
+    <string name="share_template">Mon fond d\'écran du jour est \'%1$s\' de %2$s. \n\n#Muzei Superheroes \n\n%3$s
     </string>
 
     <string name="marvel_copyright">Marvel</string>
 
-    <string name="app_url">https://play.google.com/store/apps/details?id=com.arnaudpiroelle.marvelmuzei</string>
+    <string name="app_url">https://play.google.com/store/apps/details?id=com.arnaudpiroelle.muzei.marvel</string>
 
     <string name="share_with">Partager avec</string>
 
@@ -37,7 +37,7 @@
         \n© %2$d Arnaud Piroelle
     </string>
 
-    <string name="extension_description">MarvelMuzei est une extension pour l\'application de fond d\'écran dynamique Muzei.
+    <string name="extension_description">Muzei Superheroes est une extension pour l\'application de fond d\'écran dynamique Muzei.
         \n\nFonctionnalités:
         \n- Des fonds d\'écran de personnages ou comics Marvel chaque jours
         \n- Mode de téléchargement WiFi uniquement
@@ -48,8 +48,8 @@
         \n\nComment utiliser l\'application:
         \n- Installer Muzei (http://play.google.com/store/apps/details?id=net.nurik.roman.muzei)
         \n- Ouvrir l\'application Muzei
-        \n- Sélectionner \'Marvel Muzei\' comme source
-        \n- Customiser la configuration de \'Marvel Muzei\'
+        \n- Sélectionner \'Muzei Superheroes\' comme source
+        \n- Customiser la configuration de \'Muzei Superheroes\'
         \n- C\'est terminé
         \n\nImages fournies par Marvel. © 2015 MARVEL</string>
 

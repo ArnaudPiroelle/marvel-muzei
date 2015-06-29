@@ -15,6 +15,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import rx.Observable;
+
 import static android.widget.Toast.LENGTH_SHORT;
 
 public class TagsCustomSource extends CustomSource {
@@ -30,7 +32,7 @@ public class TagsCustomSource extends CustomSource {
     }
     
     @Override
-    public Data getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException {
+    public Observable<Data> getData(List<TypeEnum> types, List<QualityEnum> qualities) throws RetryException {
         List<String> tags = preferencesUtils.getTags();
 
         if(tags != null && !tags.isEmpty()) {
